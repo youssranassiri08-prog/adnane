@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire d'inscription</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Formulaire d'inscription</h2>
+
+  <form action="/submit" method="post">
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Adresse email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" placeholder="Ex: 0612345678" required>
+
+    <label for="date_naissance">Date de naissance :</label>
+    <input type="date" id="date_naissance" name="date_naissance" required>
+
+    <label for="genre">Genre :</label>
+    <select id="genre" name="genre" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="homme">Homme</option>
+      <option value="femme">Femme</option>
+      <option value="autre">Autre</option>
+    </select>
+
+    <label for="pays">Pays :</label>
+    <input type="text" id="pays" name="pays" value="Maroc" required>
+
+    <label for="message">Message ou commentaire :</label>
+    <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..."></textarea>
+
+    <label>
+      <input type="checkbox" name="conditions" required>
+      J'accepte les conditions générales d'utilisation.
+    </label>
+
+    <input type="submit" value="S'inscrire">
+  </form>
+
+</body>
+</html>
